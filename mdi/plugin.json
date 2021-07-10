@@ -1,0 +1,12 @@
+{
+  "ID": "8g5cdc9a78ef4a7e667e138f1fc04015",
+  "ActionKeyword": "mdi",
+  "Name": "MaterialDesignIcons",
+  "Description": "Search materialdesignicons.com",
+  "Author": "Garulf",
+  "Version": "1.0",
+  "Language": "python",
+  "Website": "",
+  "IcoPath": "app.png",
+  "ExecuteFileName": "main.py"
+}
