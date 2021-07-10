@@ -6,7 +6,7 @@
   "Author": "Garulf",
   "Version": "1.0",
   "Language": "python",
-  "Website": "",
+  "Website": "https://github.com/Garulf/Flow.Launcher.Plugin.MDI",
   "IcoPath": "app.png",
   "ExecuteFileName": "main.py"
 }
