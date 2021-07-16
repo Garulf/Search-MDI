@@ -1,11 +1,6 @@
 # -*- coding: utf-8 -*-
-import codecs
-import difflib
 import json
 import os
-import re
-import urllib
-import webbrowser
 
 import win32clipboard
 
