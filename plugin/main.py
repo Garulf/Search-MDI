@@ -6,7 +6,7 @@ import win32clipboard
 
 
 try:
-    from wox import Wox, WoxAPI
+    from wox import Wox as FlowLauncher
 except ModuleNotFoundError:
     from flowlauncher import FlowLauncher, FlowLauncherAPI
 
