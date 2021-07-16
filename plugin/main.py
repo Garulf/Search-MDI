@@ -61,9 +61,6 @@ class MDI(FlowLauncher):
         return self.result
 
 
-    def test(self):
-        self.results = []
-
     def copy_to_clipboard(self, icon_name):
         win32clipboard.OpenClipboard()
         win32clipboard.EmptyClipboard()
