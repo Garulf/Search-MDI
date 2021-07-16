@@ -18,6 +18,11 @@ SVG_FILE = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//
 
 class MDI(FlowLauncher):
 
+    def __init__(self):
+        self.result = []
+        with open("./icons.json", "r", "utf-8") as f:
+            self.icons = json.load(f)
+        super().__init__()
 
     def filter(self, icon):
         if not os.path.isfile('./icons/{}.svg'.format(icon['name'])):
@@ -36,7 +41,6 @@ class MDI(FlowLauncher):
         )
 
     def query(self, query):
-        self.result = []
         f = codecs.open("./icons.json", "r", "utf-8")
         icons = json.load(f)
         f.close()
