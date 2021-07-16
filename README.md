@@ -6,4 +6,6 @@ Search [materialdesignicons.com](https://materialdesignicons.com/) icons with [F
 
 Simply type the keywords: "mdi" and your search term
 
+Selected results are added to your clipboard.
+
 ![Change Active and Inactive Colors Config](/mdi-demo.gif)
