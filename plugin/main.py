@@ -5,7 +5,10 @@ import os
 import win32clipboard
 
 
-from flowlauncher import FlowLauncher, FlowLauncherAPI
+try:
+    from wox import Wox, WoxAPI
+except ModuleNotFoundError:
+    from flowlauncher import FlowLauncher, FlowLauncherAPI
 
 
 MAX_RESULTS = 20
