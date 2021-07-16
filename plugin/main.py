@@ -17,7 +17,7 @@ class MDI(FlowLauncher):
     def __init__(self):
 
         self.result = []
-        with open("./icons.json", "r", "utf-8") as f:
+        with open("./icons.json", "r") as f:
             self.icons = json.load(f)
         super().__init__()
 
