@@ -8,4 +8,4 @@ Simply type the keywords: "mdi" and your search term
 
 Selected results are added to your clipboard.
 
-![Change Active and Inactive Colors Config](/mdi-demo.gif)
+![Animated demo](/mdi-demo.gif)
