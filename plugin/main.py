@@ -8,7 +8,7 @@ import win32clipboard
 try:
     from wox import Wox as FlowLauncher
 except ModuleNotFoundError:
-    from flowlauncher import FlowLauncher, FlowLauncherAPI
+    from flowlauncher import FlowLauncher
 
 
 MAX_RESULTS = 20
