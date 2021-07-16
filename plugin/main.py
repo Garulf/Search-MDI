@@ -20,7 +20,7 @@ class MDI(FlowLauncher):
     def __init__(self):
 
         self.result = []
-        with open("./icons.json", "r") as f:
+        with open("./plugin/icons.json", "r") as f:
             self.icons = json.load(f)
         super().__init__()
 
@@ -32,7 +32,7 @@ class MDI(FlowLauncher):
             {
                 "Title": icon['name'],
                 "SubTitle": 'Press ENTER to copy to clipboard',
-                "IcoPath": f'./icons/{icon["name"]}.svg',
+                "IcoPath": f'./plugin/icons/{icon["name"]}.svg',
                 "JsonRPCAction": {
                     "method": "copy_to_clipboard",
                     "parameters": [icon['name']]
