@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from plugin import Main
+from plugin.main import MDI
 
 if __name__ == "__main__":
-    Main()
+    MDI()
