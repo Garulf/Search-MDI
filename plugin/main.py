@@ -25,6 +25,8 @@ class MDI(FlowLauncher):
         super().__init__()
 
     def filter(self, icon):
+        if not os.path.exists('./icons/'):
+            os.mkdir('./icons')
         if not os.path.isfile('./icons/{}.svg'.format(icon['name'])):
             with open('./icons/{}.svg'.format(icon['name']), 'w') as f:
                 f.write(SVG_FILE.format(icon['data']))
