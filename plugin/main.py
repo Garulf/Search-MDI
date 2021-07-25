@@ -34,7 +34,7 @@ class MDI(FlowLauncher):
             {
                 "Title": icon['name'],
                 "SubTitle": 'Press ENTER to copy to clipboard',
-                "IcoPath": f'./plugin/icons/{icon["name"]}.svg',
+                "IcoPath": f'./icons/{icon["name"]}.svg',
                 "JsonRPCAction": {
                     "method": "copy_to_clipboard",
                     "parameters": [icon['name']]
