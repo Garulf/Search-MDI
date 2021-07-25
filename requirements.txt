@@ -1,2 +1,3 @@
 pywin32==228
 requests==2.24.0
+flowlauncher==0.1.1
