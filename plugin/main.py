@@ -59,7 +59,7 @@ class MDI(FlowLauncher):
         else:
             self.result.append(
                 {
-                    "Title": 'Type more then 1 Character to begin search...',
+                    "Title": 'Please enter your search term',
                     "SubTitle": '...'
                 }
             )
