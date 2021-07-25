@@ -19,7 +19,7 @@ class MDI(FlowLauncher):
 
     def __init__(self):
 
-        self.result = []
+        self.results = []
         with open("./plugin/icons.json", "r") as f:
             self.icons = json.load(f)
         super().__init__()
@@ -54,16 +54,16 @@ class MDI(FlowLauncher):
                     self.filter(icon)
                 elif len(q) > 1 and q in icon['name'] or q in icon['aliases']:
                     self.filter(icon)
-                if len(self.result) >= MAX_RESULTS:
+                if len(self.results) >= MAX_RESULTS:
                     break
         else:
-            self.result.append(
+            self.results.append(
                 {
                     "Title": 'Please enter your search term',
                     "SubTitle": '...'
                 }
             )
-        return self.result
+        return self.results
 
 
     def copy_to_clipboard(self, icon_name):
