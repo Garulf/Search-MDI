@@ -13,7 +13,7 @@ except ModuleNotFoundError:
 ICON_FOLDER = './icons/'
 MAX_RESULTS = 20
 SVG_FILE = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="{}" /></svg>'
-
+MDI_URL = "https://materialdesignicons.com/icon/"
 
 class MDI(FlowLauncher):
 
@@ -42,6 +42,22 @@ class MDI(FlowLauncher):
             }
         )
 
+    def add_item(self, title, subtitle='', icon=None, method=None, parameters=None, context=None, hide=False):
+    icon = f"{ICON_FOLDER}{icon}.png"
+    
+    item = {
+        "Title": title,
+        "SubTitle": subtitle,
+        "IcoPath": icon,
+        "ContextData": context,
+        "JsonRPCAction": {}
+    }
+    item['JsonRPCAction']['method'] = method
+    item['JsonRPCAction']['parameters'] = parameters
+    item['JsonRPCAction']['dontHideAfterAction'] = hide        
+    self.results.append(item)
+
+    def context_menu(self, data):
 
     def query(self, query):
         # names = [icon['name'] for icon in icons['icons']]
