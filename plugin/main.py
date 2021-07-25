@@ -2,7 +2,7 @@
 import json
 import os
 
-import win32clipboard
+import pyperclip
 
 
 try:
@@ -67,10 +67,8 @@ class MDI(FlowLauncher):
 
 
     def copy_to_clipboard(self, icon_name):
-        win32clipboard.OpenClipboard()
-        win32clipboard.EmptyClipboard()
-        win32clipboard.SetClipboardText(icon_name)
-        win32clipboard.CloseClipboard()
+        pyperclip.copy(icon_name)
+
 
 
 if __name__ == "__main__":
