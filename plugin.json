@@ -1,12 +1,12 @@
 {
   "ID": "8g5cdc9a78ef4a7e667e138f1fc04015",
   "ActionKeyword": "mdi",
-  "Name": "MaterialDesignIcons",
+  "Name": "Search-MDI",
   "Description": "Search materialdesignicons.com",
   "Author": "Garulf",
   "Version": "1.2",
   "Language": "python",
-  "Website": "https://github.com/Garulf/Flow.Launcher.Plugin.MDI",
+  "Website": "https://github.com/Garulf/Search-MDI",
   "IcoPath": "app.png",
   "ExecuteFileName": "main.py"
 }

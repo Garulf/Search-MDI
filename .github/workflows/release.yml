@@ -1,0 +1,44 @@
+name: Publish Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths-ignore: 
+      - .github/workflows/*
+      - README.md
+      - assets/*
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: get version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with: 
+          path: 'plugin.json'
+          prop_path: 'Version'
+      - run: echo ${{steps.version.outputs.prop}} 
+      - name: Install dependencies
+        run: |
+          sudo apt-get install -y gettext
+          python -m pip install --upgrade pip
+          pip install -r ./requirements.txt -t ./lib
+          zip -r Search-MDI.zip . -x '*.git*' -x 'demo.gif' -x 'README.md'
+      - name: Publish
+        if: success() && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: 'Search-MDI.zip'
+          tag_name: "v${{steps.version.outputs.prop}}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
