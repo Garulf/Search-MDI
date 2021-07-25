@@ -10,7 +10,7 @@ try:
 except ModuleNotFoundError:
     from flowlauncher import FlowLauncher
 
-
+ICON_FOLDER = './icons/'
 MAX_RESULTS = 20
 SVG_FILE = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="{}" /></svg>'
 
@@ -25,10 +25,10 @@ class MDI(FlowLauncher):
         super().__init__()
 
     def filter(self, icon):
-        if not os.path.exists('./icons/'):
-            os.mkdir('./icons')
-        if not os.path.isfile('./icons/{}.svg'.format(icon['name'])):
-            with open('./icons/{}.svg'.format(icon['name']), 'w') as f:
+        if not os.path.exists(ICON_FOLDER):
+            os.mkdir(ICON_FOLDER)
+        if not os.path.isfile(f"{ICON_FOLDER}{icon['name']}.svg"):
+            with open(f"{ICON_FOLDER}{icon['name']}.svg", 'w') as f:
                 f.write(SVG_FILE.format(icon['data']))
         self.result.append(
             {
