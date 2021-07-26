@@ -23,11 +23,12 @@ class MDI(FlowLauncher):
         self.results = []
         with open("./plugin/icons.json", "r") as f:
             self.icons = json.load(f)
+        if not os.path.exists(ICON_FOLDER):
+            os.mkdir(ICON_FOLDER)
         super().__init__()
 
     def filter(self, icon):
-        if not os.path.exists(ICON_FOLDER):
-            os.mkdir(ICON_FOLDER)
+
         if not os.path.isfile(f"{ICON_FOLDER}{icon['name']}.svg"):
             with open(f"{ICON_FOLDER}{icon['name']}.svg", 'w') as f:
                 f.write(SVG_FILE.format(icon['data']))
