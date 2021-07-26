@@ -46,6 +46,5 @@ jobs:
         with:
           files: 'Search-MDI.zip'
           tag_name: "v${{steps.version.outputs.prop}}"
-          body_path: ${{ github.workflow }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
