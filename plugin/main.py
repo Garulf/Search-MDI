@@ -84,7 +84,7 @@ class MDI(FlowLauncher):
                     "SubTitle": '...'
                 }
             )
-        return self.results
+        return self.results[:10]
 
 
     def copy_to_clipboard(self, icon_name):
