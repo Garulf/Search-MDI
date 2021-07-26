@@ -4,8 +4,10 @@ Search [materialdesignicons.com](https://materialdesignicons.com/) icons with [F
 
 ### About
 
-Simply type the keywords: "mdi" and your search term
+Simply type the keywords: `mdi` to search!
 
 Selected results are added to your clipboard.
 
-![Animated demo](/mdi-demo.gif)
+`SHIFT`+`ENTER` allows you to open the icon on https://materialdesignicons.com/
+
+![screenshot](/assets/mdi-demo.png)
