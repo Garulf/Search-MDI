@@ -27,11 +27,16 @@ class MDI(FlowLauncher):
             os.mkdir(ICON_FOLDER)
         super().__init__()
 
+    def create_icon(self, icon_name):
+        if not os.path.isfile(f"{ICON_FOLDER}{icon_name}.svg"):
+            for icon in self.icons['icons']:
+                if icon['name'] == icon_name:
+                    with open(f"{ICON_FOLDER}{icon['name']}.svg", 'w') as f:
+                        f.write(SVG_FILE.format(icon['data']))
+        return f"{ICON_FOLDER}{icon_name}.svg"
+
     def filter(self, icon):
 
-        if not os.path.isfile(f"{ICON_FOLDER}{icon['name']}.svg"):
-            with open(f"{ICON_FOLDER}{icon['name']}.svg", 'w') as f:
-                f.write(SVG_FILE.format(icon['data']))
         self.add_item(
             title=icon['name'],
             subtitle='Press ENTER to copy to clipboard (SHIFT+ENTER for more options)',
@@ -42,7 +47,7 @@ class MDI(FlowLauncher):
         )
 
     def add_item(self, title, subtitle='', icon=None, method=None, parameters=None, context=None, hide=False):
-        icon = f"{ICON_FOLDER}{icon}.svg"
+        icon = self.create_icon(icon)
         
         item = {
             "Title": title,
@@ -60,6 +65,7 @@ class MDI(FlowLauncher):
         self.add_item(
             title='View icon on website',
             subtitle=f"{MDI_URL}{data[0]}",
+            icon='web',
             method="open_web",
             parameters=[data[0]]
         )
