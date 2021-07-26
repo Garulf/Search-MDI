@@ -11,7 +11,7 @@ on:
 
 jobs:
   publish:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [3.9]
@@ -27,17 +27,27 @@ jobs:
         with: 
           path: 'plugin.json'
           prop_path: 'Version'
-      - run: echo ${{steps.version.outputs.prop}} 
+      - run: echo ${{steps.version.outputs.prop}}
+      - uses: actions/cache@v2
+        if: startsWith(runner.os, 'Linux')
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r ./requirements.txt -t ./lib
-          zip -r Search-MDI.zip . -x '*.git*' -x 'demo.gif' -x 'README.md'
+          zip -r Search-MDI.zip . -x '*.git*' -x 'demo.gif' -x 'README.md' -x 'assets/*'
+      - name: Generate Changelog
+        run: echo ${{ github.sha }} > ${{ github.workflow }}-CHANGELOG.txt
       - name: Publish
         if: success() && github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v1
         with:
           files: 'Search-MDI.zip'
           tag_name: "v${{steps.version.outputs.prop}}"
+          body_path: ${{ github.workflow }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
