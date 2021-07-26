@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import os
+import webbrowser
 
 import pyperclip
 
@@ -30,34 +31,38 @@ class MDI(FlowLauncher):
         if not os.path.isfile(f"{ICON_FOLDER}{icon['name']}.svg"):
             with open(f"{ICON_FOLDER}{icon['name']}.svg", 'w') as f:
                 f.write(SVG_FILE.format(icon['data']))
-        self.result.append(
-            {
-                "Title": icon['name'],
-                "SubTitle": 'Press ENTER to copy to clipboard',
-                "IcoPath": f'./icons/{icon["name"]}.svg',
-                "JsonRPCAction": {
-                    "method": "copy_to_clipboard",
-                    "parameters": [icon['name']]
-                }
-            }
+        self.add_item(
+            title=icon['name'],
+            subtitle='Press ENTER to copy to clipboard (SHIFT+ENTER for more options)',
+            icon=icon["name"],
+            context=[icon["name"]],
+            method="copy_to_clipboard",
+            parameters= [icon['name']]
         )
 
     def add_item(self, title, subtitle='', icon=None, method=None, parameters=None, context=None, hide=False):
-    icon = f"{ICON_FOLDER}{icon}.png"
-    
-    item = {
-        "Title": title,
-        "SubTitle": subtitle,
-        "IcoPath": icon,
-        "ContextData": context,
-        "JsonRPCAction": {}
-    }
-    item['JsonRPCAction']['method'] = method
-    item['JsonRPCAction']['parameters'] = parameters
-    item['JsonRPCAction']['dontHideAfterAction'] = hide        
-    self.results.append(item)
+        icon = f"{ICON_FOLDER}{icon}.svg"
+        
+        item = {
+            "Title": title,
+            "SubTitle": subtitle,
+            "IcoPath": icon,
+            "ContextData": context,
+            "JsonRPCAction": {}
+        }
+        item['JsonRPCAction']['method'] = method
+        item['JsonRPCAction']['parameters'] = parameters
+        item['JsonRPCAction']['dontHideAfterAction'] = hide        
+        self.results.append(item)
 
     def context_menu(self, data):
+        self.add_item(
+            title='View icon on website',
+            subtitle=f"{MDI_URL}{data[0]}",
+            method="open_web",
+            parameters=[data[0]]
+        )
+        return self.results
 
     def query(self, query):
         # names = [icon['name'] for icon in icons['icons']]
@@ -85,7 +90,8 @@ class MDI(FlowLauncher):
     def copy_to_clipboard(self, icon_name):
         pyperclip.copy(icon_name)
 
-
+    def open_web(self, icon_name):
+        webbrowser.open(f"{MDI_URL}{icon_name}")
 
 if __name__ == "__main__":
     MDI()
