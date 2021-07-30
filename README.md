@@ -7,6 +7,7 @@ Search [materialdesignicons.com](https://materialdesignicons.com/) icons with [F
 ### Flow Launcher
 Type `pm install search-mdi`
 
+### Manual Installation:
 Unzip [search-mdi.zip](https://github.com/Garulf/Search-MDI/releases/latest) to your launchers plugin directory.
 
 | Launcher      | Plugin Path                      |
