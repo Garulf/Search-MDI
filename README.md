@@ -7,6 +7,12 @@ Search [materialdesignicons.com](https://materialdesignicons.com/) icons with [F
 ### Flow Launcher
 Type `pm install search-mdi`
 
+Unzip [search-mdi.zip](https://github.com/Garulf/Search-MDI/releases/latest) to your launchers plugin directory.
+
+| Launcher      | Plugin Path                      |
+|---------------|----------------------------------|
+| Wox           | `%appdata%\Wox\Plugins`          |
+| Flow Launcher | `%appdata%\FlowLauncher\Plugins` |
 ## About
 
 Simply type the keywords: `mdi` to search!
