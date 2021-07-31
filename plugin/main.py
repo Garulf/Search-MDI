@@ -3,24 +3,19 @@ import json
 import os
 import webbrowser
 
+
+from flox import Flox
+
 import pyperclip
-
-
-try:
-    from wox import Wox as FlowLauncher
-except ModuleNotFoundError:
-    from flowlauncher import FlowLauncher
 
 ICON_FOLDER = './icons/'
 MAX_RESULTS = 100
 SVG_FILE = '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="{}" /></svg>'
 MDI_URL = "https://materialdesignicons.com/icon/"
 
-class MDI(FlowLauncher):
+class MDI(Flox):
 
     def __init__(self):
-
-        self.results = []
         with open("./plugin/icons.json", "r") as f:
             self.icons = json.load(f)
         if not os.path.exists(ICON_FOLDER):
@@ -40,36 +35,21 @@ class MDI(FlowLauncher):
         self.add_item(
             title=icon['name'],
             subtitle='Press ENTER to copy to clipboard (SHIFT+ENTER for more options)',
-            icon=icon["name"],
+            icon=self.create_icon(icon["name"]),
             context=[icon["name"]],
             method="copy_to_clipboard",
             parameters= [icon['name']]
         )
 
-    def add_item(self, title, subtitle='', icon=None, method=None, parameters=None, context=None, hide=False):
-        icon = self.create_icon(icon)
-        
-        item = {
-            "Title": title,
-            "SubTitle": subtitle,
-            "IcoPath": icon,
-            "ContextData": context,
-            "JsonRPCAction": {}
-        }
-        item['JsonRPCAction']['method'] = method
-        item['JsonRPCAction']['parameters'] = parameters
-        item['JsonRPCAction']['dontHideAfterAction'] = hide        
-        self.results.append(item)
-
     def context_menu(self, data):
         self.add_item(
             title='View icon on website',
             subtitle=f"{MDI_URL}{data[0]}",
-            icon='web',
+            icon=self.create_icon('web'),
             method="open_web",
             parameters=[data[0]]
         )
-        return self.results
+        return self._results
 
     def query(self, query):
         # names = [icon['name'] for icon in icons['icons']]
@@ -82,10 +62,10 @@ class MDI(FlowLauncher):
                 self.filter(icon)
             elif len(q) > 1 and q in icon['name'] or q in icon['aliases']:
                 self.filter(icon)
-            if len(self.results) >= MAX_RESULTS:
+            if len(self._results) >= MAX_RESULTS:
                 break
 
-        return self.results
+        return self._results
 
 
     def copy_to_clipboard(self, icon_name):
