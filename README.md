@@ -1,4 +1,5 @@
 # Material Design Icon Search
+### * Requires [Microsoft's Windows PowerToys application](https://github.com/microsoft/PowerToys) to preview icons inline (See screenshot below).
 
 Search [materialdesignicons.com](https://materialdesignicons.com/) icons with [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
