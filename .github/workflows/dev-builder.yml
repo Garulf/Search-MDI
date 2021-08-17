@@ -53,6 +53,7 @@ jobs:
       - name: Package files
         run: |
           git clone https://github.com/Garulf/flow_commands/ bin
+          pip install wheel
           pip install -r ./bin/requirements.txt
           python ./bin/commands.py package -n "${{github.event.repository.name}}.zip"
       - name: Delete previous drafts
