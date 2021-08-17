@@ -30,7 +30,9 @@ class MDI(Flox):
                 if icon["name"] == icon_name:
                     svg = bytes(SVG_FILE.format(icon["data"]), "UTF-8")
                     svg_bytes = svg2rlg(BytesIO(svg))
-                    renderPM.drawToFile(svg_bytes, f"{ICON_FOLDER}{icon['name']}.png", fmt="PNG")
+                    renderPM.drawToFile(
+                        svg_bytes, f"{ICON_FOLDER}{icon['name']}.png", fmt="PNG"
+                    )
         return f"{ICON_FOLDER}{icon_name}.png"
 
     def filter(self, icon):
