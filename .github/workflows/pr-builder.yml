@@ -46,5 +46,5 @@ jobs:
           value: "${{steps.version.outputs.major}}.${{steps.version.outputs.minor}}.${{steps.version.outputs.patch}}-dev"
       - uses: actions/upload-artifact@v2
         with:
-          name: "${{GITHUB_BASE_REF}}-${{GITHUB_RUN_ID}}"
+          name: "${{env.GITHUB_BASE_REF}}-${{env.GITHUB_RUN_ID}}"
           path: ${{ github.workspace }}/**/*
