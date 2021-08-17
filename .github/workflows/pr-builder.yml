@@ -48,7 +48,7 @@ jobs:
           name: "${{ github.base_ref }}-${{ github.run_id }}"
           path: |
             ${{ github.workspace }}/**/*
-            !.git*/*
+            !.git*
             !assets/
             !requirements.txt
             !README.*
