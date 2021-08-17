@@ -2,10 +2,12 @@
 import json
 import os
 import webbrowser
-
+from io import BytesIO
 
 from flox import Flox
 
+from svglib.svglib import svg2rlg
+from reportlab.graphics import renderPDF, renderPM
 import pyperclip
 
 ICON_FOLDER = "./icons/"
@@ -23,12 +25,15 @@ class MDI(Flox):
         super().__init__()
 
     def create_icon(self, icon_name):
-        if not os.path.isfile(f"{ICON_FOLDER}{icon_name}.svg"):
+        if not os.path.isfile(f"{ICON_FOLDER}{icon_name}.png"):
             for icon in self.icons["icons"]:
                 if icon["name"] == icon_name:
-                    with open(f"{ICON_FOLDER}{icon['name']}.svg", "w") as f:
-                        f.write(SVG_FILE.format(icon["data"]))
-        return f"{ICON_FOLDER}{icon_name}.svg"
+                    svg = bytes(SVG_FILE.format(icon["data"]), "UTF-8")
+                    svg_bytes = svg2rlg(BytesIO(svg))
+                    renderPM.drawToFile(
+                        svg_bytes, f"{ICON_FOLDER}{icon['name']}.png", fmt="PNG"
+                    )
+        return f"{ICON_FOLDER}{icon_name}.png"
 
     def filter(self, icon):
 
