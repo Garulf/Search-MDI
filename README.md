@@ -1,6 +1,3 @@
-# Material Design Icon Search
-### * Requires [Microsoft's Windows PowerToys application](https://github.com/microsoft/PowerToys) to preview icons inline (See screenshot below).
-
 Search [materialdesignicons.com](https://materialdesignicons.com/) icons with [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
 ## Install
@@ -13,7 +10,6 @@ Unzip [search-mdi.zip](https://github.com/Garulf/Search-MDI/releases/latest) to 
 
 | Launcher      | Plugin Path                      |
 |---------------|----------------------------------|
-| Wox           | `%appdata%\Wox\Plugins`          |
 | Flow Launcher | `%appdata%\FlowLauncher\Plugins` |
 ## About
 
@@ -24,4 +20,5 @@ Selected results are added to your clipboard.
 `SHIFT`+`ENTER` allows you to open the icon on https://materialdesignicons.com/
 
 ## Screenshots
-![screenshot](/assets/mdi-demo.png)
+![image](https://user-images.githubusercontent.com/535299/147867481-92e3158a-f87d-4a34-8cd3-b68e3d8a825b.png)
+
