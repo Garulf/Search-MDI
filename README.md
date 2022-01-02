@@ -20,4 +20,5 @@ Selected results are added to your clipboard.
 `SHIFT`+`ENTER` allows you to open the icon on https://materialdesignicons.com/
 
 ## Screenshots
-![screenshot](/assets/mdi-demo.png)
+![image](https://user-images.githubusercontent.com/535299/147867481-92e3158a-f87d-4a34-8cd3-b68e3d8a825b.png)
+
