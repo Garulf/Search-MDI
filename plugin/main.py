@@ -63,7 +63,7 @@ class MDI(Flox, Clipboard):
                     context=[icon["name"]],
                     method=self.put,
                     parameters=[icon["name"]],
-                    auto_complete_text=f'{self.user_keyword} {icon["name"]}',
+                    auto_complete_text=f'{self.user_keyword} {icon["name"]}'.replace('* ', ''),
                 )
 
     def open_web(self, icon_name):
