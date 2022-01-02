@@ -1,2 +1,1 @@
-git+git://github.com/garulf/flox@v0.4.0#egg=flox
-pyperclip==1.8.2
+git+git://github.com/garulf/flox@v0.8.3#egg=flox
