@@ -4,9 +4,8 @@ import os
 import webbrowser
 
 
-from flox import Flox
+from flox import Flox, Clipboard
 
-import pyperclip
 
 ICON_FOLDER = "./icons/"
 MAX_RESULTS = 100
