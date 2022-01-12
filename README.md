@@ -22,3 +22,5 @@ Selected results are added to your clipboard.
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/535299/147867481-92e3158a-f87d-4a34-8cd3-b68e3d8a825b.png)
 
+##
+<a href="https://www.buymeacoffee.com/garulf" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
