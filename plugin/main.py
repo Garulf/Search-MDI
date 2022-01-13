@@ -6,7 +6,8 @@ from pathlib import Path
 from difflib import SequenceMatcher as sm
 
 
-from flox import Flox, Clipboard, ICON_BROWSER
+from flox import Flox, ICON_BROWSER
+from flox.clipboard import Clipboard 
 
 
 META_FILE = "meta.json"
