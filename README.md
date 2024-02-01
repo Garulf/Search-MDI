@@ -1,4 +1,4 @@
-Search [materialdesignicons.com](https://materialdesignicons.com/) icons with [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
+Search [pictogrammers.com/library/mdi/](https://pictogrammers.com/library/mdi/) icons with [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
 ## Install
 
@@ -17,7 +17,7 @@ Simply type the keywords: `mdi` to search!
 
 Selected results are added to your clipboard.
 
-`SHIFT`+`ENTER` allows you to open the icon on https://materialdesignicons.com/
+`SHIFT`+`ENTER` allows you to open the icon on https://pictogrammers.com/library/mdi/
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/535299/147867481-92e3158a-f87d-4a34-8cd3-b68e3d8a825b.png)
