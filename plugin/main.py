@@ -13,7 +13,7 @@ from flox.clipboard import Clipboard
 META_FILE = "meta.json"
 META_PATH = Path(Path.cwd(), 'plugin', META_FILE)
 MAX_RESULTS = 100
-MDI_URL = "https://materialdesignicons.com/icon/"
+MDI_URL = "https://pictogrammers.com/library/mdi/icon/"
 
 
 class MDI(Flox, Clipboard):
