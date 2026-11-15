@@ -58,6 +58,10 @@ def test_results_serialize_to_json():
     json.dumps([result.to_json() for result in run_query("account")])
 
 
+def test_icon_url_points_at_the_pictogrammers_icon_page():
+    assert mdi.icon_url("home") == "https://pictogrammers.com/library/mdi/icon/home/"
+
+
 def test_context_menu_opens_the_icon_page():
     (item,) = mdi.context_menu(["home"])
     assert item.title == "View icon on website"

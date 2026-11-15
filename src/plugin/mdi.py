@@ -8,7 +8,7 @@ from pyflowlauncher.models.result import Glyph, PreviewInfo
 import icons
 from launcher import KeywordLauncher
 
-MDI_URL = "https://materialdesignicons.com/icon/"
+MDI_URL = "https://pictogrammers.com/library/mdi/icon/"
 PLUGIN_ICON = str(Path(__file__).resolve().parent.parent / "icon.png")
 ICONS_PER_YIELD = 250
 
@@ -17,7 +17,7 @@ ICONS = icons.load_icons()
 
 
 def icon_url(name: str) -> str:
-    return f"{MDI_URL}{name}"
+    return f"{MDI_URL}{name}/"
 
 
 def auto_complete_text(name: str) -> str:
