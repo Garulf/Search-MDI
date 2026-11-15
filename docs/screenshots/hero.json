@@ -1,0 +1,31 @@
+{
+  "keyword": "mdi",
+  "query": "coffee",
+  "icon": "../../data/icon.png",
+  "max_results": 4,
+  "selection": 0,
+  "results": [
+    {
+      "title": "coffee",
+      "subtitle": "tea, cup, free-breakfast, local-cafe, drink",
+      "glyph": "coffee"
+    },
+    {
+      "title": "coffee-off",
+      "subtitle": "drink-off, tea-off, cup-off, free-breakfast-off, local-cafe-off",
+      "glyph": "coffee-off"
+    },
+    {
+      "title": "offer",
+      "subtitle": "",
+      "glyph": "offer"
+    },
+    {
+      "title": "coffee-maker",
+      "subtitle": "espresso-maker, coffee-machine, espresso-machine",
+      "glyph": "coffee-maker"
+    }
+  ],
+  "query_suggestion": "",
+  "show_caret": true
+}

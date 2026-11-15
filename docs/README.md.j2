@@ -1,0 +1,67 @@
+{% extends "base.md.j2" %}
+
+{% block badges_extra %} [![Downloads](https://img.shields.io/github/downloads/{{ project.owner }}/{{ project.repo }}/total)]({{ project.url }}/releases/latest){% endblock %}
+
+{% block usage %}
+## Features
+
+* **Works offline.** The [Material Design Icons](https://pictogrammers.com/library/mdi/) set (6,595 icons, up to MDI 6.5.95) ships with the plugin. No web requests while you search.
+* **Real icons in the results.** Each result shows the icon itself, drawn from the bundled font.
+* **Matches aliases too.** `mdi house` finds `home`, `mdi cup` finds `coffee`.
+* **Copy on Enter.** The icon name, such as `home`, goes straight to your clipboard.
+
+## Usage
+
+Type `mdi` followed by part of an icon name or alias:
+
+```
+mdi github
+```
+
+{{ screenshot("search", alt="Search-MDI results in Flow Launcher") }}
+
+Press `Enter` to copy the icon name to the clipboard.
+
+### Context menu
+
+Open the context menu (`Shift+Enter` or right-click) and choose **View icon on website** to open the icon's page
+on pictogrammers.com:
+
+{{ screenshot("context", alt="Search-MDI context menu in Flow Launcher") }}
+
+## Installation
+
+### Flow Launcher
+
+In Flow Launcher, type:
+
+```
+pm install search-mdi
+```
+
+{{ screenshot("install", alt="Flow Launcher plugin manager installing Search-MDI") }}
+
+### Manual installation
+
+Download `Search-MDI-<version>.zip` from the [latest release]({{ project.url }}/releases/latest) and unzip it into
+`%appdata%\FlowLauncher\Plugins`, then restart Flow Launcher.
+
+Pre-releases of the next version are published from the open release PR on the
+[releases page]({{ project.url }}/releases) for testing. Flow Launcher won't offer them as updates.
+
+## Requirements
+
+* Flow Launcher 1.17.0 or newer
+* Python 3.8 or newer, which Flow Launcher can install for you
+
+## Changelog
+
+{{ changelog(3) }}
+
+See [CHANGELOG.md](CHANGELOG.md) for the full history.
+{% endblock %}
+
+{% block screenshots %}{% endblock %}
+{% block install %}{% endblock %}
+{% block contributing %}{% endblock %}
+{% block license %}{% endblock %}
