@@ -1,0 +1,26 @@
+{
+  "keyword": "mdi",
+  "query": "github",
+  "icon": "../../data/icon.png",
+  "max_results": 3,
+  "selection": 0,
+  "results": [
+    {
+      "title": "github",
+      "subtitle": "microsoft-github",
+      "glyph": "github"
+    },
+    {
+      "title": "git",
+      "subtitle": "",
+      "glyph": "git"
+    },
+    {
+      "title": "gitlab",
+      "subtitle": "",
+      "glyph": "gitlab"
+    }
+  ],
+  "query_suggestion": "",
+  "show_caret": false
+}

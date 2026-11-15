@@ -1,0 +1,16 @@
+{
+  "keyword": "mdi",
+  "query": "github",
+  "icon": "../../data/icon.png",
+  "max_results": 1,
+  "selection": 0,
+  "results": [
+    {
+      "title": "View icon on website",
+      "subtitle": "https://pictogrammers.com/library/mdi/icon/github/",
+      "glyph": "web"
+    }
+  ],
+  "query_suggestion": "",
+  "show_caret": false
+}
