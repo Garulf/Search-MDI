@@ -5,8 +5,8 @@
   "Description": "Search materialdesignicons.com",
   "Author": "Garulf",
   "Version": "3.0.3",
-  "Language": "python",
+  "Language": "python_v2",
   "Website": "https://github.com/Garulf/Search-MDI",
-  "IcoPath": "app.png",
-  "ExecuteFileName": "main.py"
+  "IcoPath": "icon.png",
+  "ExecuteFileName": "run.py"
 }
